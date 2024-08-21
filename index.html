@@ -1,0 +1,78 @@
+/**
+* represantion is:
+* Nikita sigalov: 321953390
+* Razi Kabiya: 211756630
+*/
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Phone Book</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='./styles/style.css'>
+</head>
+
+<body>
+  <header>
+    <h1>Phone Book</h1>
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <label for="name"><b>Name</b></label>
+        <input type="text" id="searchInput" placeholder="Search by Username">
+        <button type="reset" class="btn" onclick="resetForm()">Reset</button>
+      </form>
+    </div>
+  </header>
+  <main id="main">
+    <div class="button-container">
+      <button class="btn" onclick="renderList()">Open All List</button>
+      <button class="btn" onclick="addContact()">Add Contact</button>
+      <button class="btn" onclick="deleteList()">Delete All List</button>
+    </div>
+    <ul class="list"></ul>
+  </main>
+  <footer>
+    <p>Nikita Sigalov And Razi Kabiya&#xa9;</p>
+    <button class="btn"><a href="https://www.youtube.com/watch?v=x0LSWZo-rt0" target="_blank">Special event
+        click!</a>
+    </button>
+  </footer>
+
+  <!-- Modal for User Details -->
+  <div id="detailsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeDetailsModal()">&times;</span>
+      <h2 id="detailsUsername">Username</h2>
+      <p><strong>Phone:</strong> <span id="detailsPhone">Phone Number</span></p>
+      <p><strong>Email:</strong> <span id="detailsEmail">Email Address</span></p>
+      <p><strong>Address:</strong> <span id="detailsAddress">Address</span></p>
+      <p><strong>Text:</strong> <span id="detailsText">Additional Info</span></p>
+    </div>
+  </div>
+
+  <!-- Modal for Edit/Add User -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <form id="userForm">
+        <label for="inputUserName">Username:</label>
+        <input type="text" id="inputUserName" required><br><br>
+        <label for="inputUserPhone">Phone:</label>
+        <input type="text" id="inputUserPhone" required><br><br>
+        <label for="inputUserEmail">Email:</label>
+        <input type="text" id="inputUserEmail"><br><br>
+        <label for="inputUserAddress">Address:</label>
+        <input type="text" id="inputUserAddress"><br><br>
+        <button type="submit" id="saveUserBtn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src='./javascript/javascript.js'></script>
+
+</body>
+
+</html>
